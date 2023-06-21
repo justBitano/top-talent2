@@ -1,0 +1,15 @@
+D:\top-talent-api\TopTalent\DataAccessObject\bin\Debug\net5.0\DataAccessObject.deps.json
+D:\top-talent-api\TopTalent\DataAccessObject\bin\Debug\net5.0\DataAccessObject.dll
+D:\top-talent-api\TopTalent\DataAccessObject\bin\Debug\net5.0\DataAccessObject.pdb
+D:\top-talent-api\TopTalent\DataAccessObject\bin\Debug\net5.0\BussinessObject.dll
+D:\top-talent-api\TopTalent\DataAccessObject\bin\Debug\net5.0\BussinessObject.pdb
+D:\top-talent-api\TopTalent\DataAccessObject\obj\Debug\net5.0\DataAccessObject.csproj.AssemblyReference.cache
+D:\top-talent-api\TopTalent\DataAccessObject\obj\Debug\net5.0\DataAccessObject.GeneratedMSBuildEditorConfig.editorconfig
+D:\top-talent-api\TopTalent\DataAccessObject\obj\Debug\net5.0\DataAccessObject.AssemblyInfoInputs.cache
+D:\top-talent-api\TopTalent\DataAccessObject\obj\Debug\net5.0\DataAccessObject.AssemblyInfo.cs
+D:\top-talent-api\TopTalent\DataAccessObject\obj\Debug\net5.0\DataAccessObject.csproj.CoreCompileInputs.cache
+D:\top-talent-api\TopTalent\DataAccessObject\obj\Debug\net5.0\DataAccessObject.csproj.CopyComplete
+D:\top-talent-api\TopTalent\DataAccessObject\obj\Debug\net5.0\DataAccessObject.dll
+D:\top-talent-api\TopTalent\DataAccessObject\obj\Debug\net5.0\refint\DataAccessObject.dll
+D:\top-talent-api\TopTalent\DataAccessObject\obj\Debug\net5.0\DataAccessObject.pdb
+D:\top-talent-api\TopTalent\DataAccessObject\obj\Debug\net5.0\ref\DataAccessObject.dll

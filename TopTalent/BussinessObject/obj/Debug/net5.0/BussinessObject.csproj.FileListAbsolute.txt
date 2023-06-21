@@ -1,0 +1,15 @@
+D:\top-talent-api\TopTalent\BussinessObject\bin\Debug\net5.0\BussinessObject.deps.json
+D:\top-talent-api\TopTalent\BussinessObject\bin\Debug\net5.0\BussinessObject.runtimeconfig.json
+D:\top-talent-api\TopTalent\BussinessObject\bin\Debug\net5.0\BussinessObject.runtimeconfig.dev.json
+D:\top-talent-api\TopTalent\BussinessObject\bin\Debug\net5.0\BussinessObject.dll
+D:\top-talent-api\TopTalent\BussinessObject\bin\Debug\net5.0\BussinessObject.pdb
+D:\top-talent-api\TopTalent\BussinessObject\obj\Debug\net5.0\BussinessObject.csproj.AssemblyReference.cache
+D:\top-talent-api\TopTalent\BussinessObject\obj\Debug\net5.0\BussinessObject.GeneratedMSBuildEditorConfig.editorconfig
+D:\top-talent-api\TopTalent\BussinessObject\obj\Debug\net5.0\BussinessObject.AssemblyInfoInputs.cache
+D:\top-talent-api\TopTalent\BussinessObject\obj\Debug\net5.0\BussinessObject.AssemblyInfo.cs
+D:\top-talent-api\TopTalent\BussinessObject\obj\Debug\net5.0\BussinessObject.csproj.CoreCompileInputs.cache
+D:\top-talent-api\TopTalent\BussinessObject\obj\Debug\net5.0\BussinessObject.dll
+D:\top-talent-api\TopTalent\BussinessObject\obj\Debug\net5.0\refint\BussinessObject.dll
+D:\top-talent-api\TopTalent\BussinessObject\obj\Debug\net5.0\BussinessObject.pdb
+D:\top-talent-api\TopTalent\BussinessObject\obj\Debug\net5.0\BussinessObject.genruntimeconfig.cache
+D:\top-talent-api\TopTalent\BussinessObject\obj\Debug\net5.0\ref\BussinessObject.dll

@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\DataAccessObject",
+    "\\Repository",
+    "\\TopTalentAPI",
+    "\\TopTalentAPI\\Controllers"
+  ],
+  "SelectedNode": "\\TopTalentAPI\\Controllers\\AuthController.cs",
+  "PreviewInSolutionExplorer": false
+}
