@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tpxuoynDxSE3bF3jTbBbfTlTHZsNe7BTH2WGl7AQD8pL3SZIMT7jwwzZ6HIu4Y43VNpy8siIp1n+eT63vYGtCg==",
+  "dgSpecHash": "hHSzuO27GSGgZpcZCHuSa2egFGVqs6I0iS3zGW8Q62iHyO+aM7/ce4LjOmDsSVUSYfM9dr3A5e9GTMnUPRA1Tg==",
   "success": true,
-  "projectFilePath": "D:\\top-talent-api\\TopTalent\\BussinessObject\\BussinessObject.csproj",
+  "projectFilePath": "D:\\top-talent-api\\top-talent2\\TopTalent\\BussinessObject\\BussinessObject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bitano\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Bitano\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

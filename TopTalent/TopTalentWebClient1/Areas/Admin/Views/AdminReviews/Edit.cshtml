@@ -1,0 +1,51 @@
+﻿@model TopTalentWebClient1.Models.Review
+
+@{
+    ViewData["Title"] = " Review Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="page-header">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+            <a class="breadcrumb-item" asp-area="Admin" asp-controller="AdminReview" asp-action="Index">Quản lý Review</a>
+            <span class="breadcrumb-item active">Cập nhật thông tin Review</span>
+        </nav>
+    </div>
+</div>
+
+<h1>Edit</h1>
+
+<h4>Review</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ReviewId" />
+            <div class="form-group">
+                <label asp-for="BookingId" class="control-label"></label>
+                <select asp-for="BookingId" class="form-control" asp-items="ViewBag.BookingId"></select>
+                <span asp-validation-for="BookingId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text" class="control-label"></label>
+                <input asp-for="Text" class="form-control" />
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rate" class="control-label"></label>
+                <input asp-for="Rate" class="form-control" />
+                <span asp-validation-for="Rate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+     <a class="btn btn-success  m-r-5" asp-action="Index">Back to List</a>
+</div>
+

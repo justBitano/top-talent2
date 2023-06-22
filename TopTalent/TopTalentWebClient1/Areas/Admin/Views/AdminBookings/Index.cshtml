@@ -1,0 +1,77 @@
+﻿@model IEnumerable<TopTalentWebClient1.Models.Booking>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="page-header">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+            <span class="breadcrumb-item active">Quản lý Booking</span>
+        </nav>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <h1>
+        Quản lý Booking
+    </h1>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Create Date</th>
+                <th scope="col">User</th>
+                <th scope="col">Description</th>
+                <th scope="col">Cash</th>
+                <th scope="col">Talent</th>
+                <th scope="col">Status</th>
+                <th scope="col">#</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@item.BookingId</th>
+                        <td>@item.CreateDate</td>
+                        <td> @item.User.FullName (@item.User.UserId)</td>
+                        <td> @item.Description</td>
+                        <td>@item.Cash</td>
+                        <td>@item.Talent.FullName (@item.Talent.TalentId) </td>
+                        <td>
+                            @if(@item.Status == null){
+                                <p>Pending</p>
+                            }else if(@item.Status == 1){
+                                 <p>  Request Talent</p>
+                            }else if(@item.Status == 2){
+                                 <p>Talent Approved</p>
+                            }else if(@item.Status == 3){
+                                 <p>Request User</p>
+                            }else if(@item.Status == 4){
+                                 <p>User Payment</p>
+                            }else if(@item.Status == 5){
+                                 <p>Success Payment</p>
+                            }
+                            
+                            
+                        </td>
+                        <td>
+                            <a class="btn btn-primary m-r-5" asp-action="Edit" asp-route-id="@item.BookingId">Edit</a> |
+                            <a class="btn btn-info  m-r-5" asp-action="Details" asp-route-id="@item.BookingId">Details</a> |
+                            <a class="btn btn-danger  m-r-5" asp-action="Delete" asp-route-id="@item.BookingId">Delete</a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+

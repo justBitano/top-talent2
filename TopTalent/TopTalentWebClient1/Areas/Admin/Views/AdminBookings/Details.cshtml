@@ -1,0 +1,105 @@
+﻿@model TopTalentWebClient1.Models.Booking
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="page-header">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+            <a class="breadcrumb-item" asp-area="Admin" asp-controller="AdminBookings" asp-action="Index">Quản lý Booking</a>
+            <span class="breadcrumb-item active">Thông tin chi tiết Booking @Model.BookingId</span>
+        </nav>
+    </div>
+</div>
+<h1>Details</h1>
+<div class="card-body">
+    <h4 class="card-title">Booking @Model.BookingId</h4>
+    <div class="table-responsive">
+        <table class="product-info-table m-t-20">
+            <tbody>
+                <tr>
+                    <td>Create Date </td>
+                    <td class="text-dark font-weight-semibold">@Model.CreateDate</td>
+                </tr>
+                
+                <tr>
+
+                    <td>| USER | </td>
+                    <td>|Fullname|</td>
+                    <td class="text-dark font-weight-semibold">@Model.User.FullName </td>
+                    <td>|username|</td>
+                    <td class="text-dark font-weight-semibold">@Model.User.Username </td>
+                    <td>|Phone|</td>
+                    <td class="text-dark font-weight-semibold">@Model.User.Phone </td>
+                    
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td class="text-dark font-weight-semibold">@Model.Description</td>
+                </tr>
+                <tr>
+                    <td>Cash</td>
+                    <td class="text-dark font-weight-semibold">@Model.Cash</td>
+                </tr>
+
+                <tr>
+                    <td>| TALENT | </td>
+                    <td>|Fullname|</td>
+                    <td class="text-dark font-weight-semibold">@Model.Talent.FullName</td>
+                    <td>|username|</td>
+                    <td class="text-dark font-weight-semibold">@Model.Talent.Username</td>
+                    <td>|Phone|</td>
+                    <td class="text-dark font-weight-semibold">@Model.Talent.Phone </td>
+                   
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td class="text-dark font-weight-semibold">
+                        @if (@Model.Status == null)
+                        {
+                            <p>Pending</p>
+                        }
+                        else if (@Model.Status == 1)
+                        {
+                            <p>  Request Talent</p>
+                        }
+                        else if (@Model.Status == 2)
+                        {
+                            <p>Talent Approved</p>
+                        }
+                        else if (@Model.Status == 3)
+                        {
+                            <p>Request User</p>
+                        }
+                        else if (@Model.Status == 4)
+                        {
+                            <p>User Payment</p>
+                        }
+                        else if (@Model.Status == 5)
+                        {
+                            <p>Success Payment</p>
+                        }
+                        
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+    </div>
+    <div>
+        <a class="btn btn-primary m-r-5" asp-action="Edit" asp-route-id="@Model.BookingId">Edit</a> |
+        <a class="btn btn-success  m-r-5" asp-action="Index">Back to List</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+

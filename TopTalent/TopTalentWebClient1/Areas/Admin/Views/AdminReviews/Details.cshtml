@@ -1,0 +1,53 @@
+﻿@model TopTalentWebClient1.Models.Review
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="page-header">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+            <a class="breadcrumb-item" asp-area="Admin" asp-controller="AdminReviews" asp-action="Index">Quản lý Review</a>
+            <span class="breadcrumb-item active">Thông tin chi tiết Review ID: @Model.ReviewId</span>
+        </nav>
+    </div>
+</div>
+<div class="card-body">
+    <h1>Information</h1>
+    <div class="table-responsive">
+        <table class="product-info-table m-t-20">
+            <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td class="text-dark font-weight-semibold">@Model.ReviewId</td>
+                </tr>
+                <tr>
+                    <td>Booking ID</td>
+                    <td class="text-dark font-weight-semibold">@Model.BookingId</td>
+                </tr>
+                <tr>
+                    <td>Talent</td>
+                    <td class="text-dark font-weight-semibold">@Model.Booking.Talent.FullName</td>
+                </tr>
+                <tr>
+                    <td>Text</td>
+                    <td class="text-dark font-weight-semibold">@Model.Text</td>
+                </tr>
+               
+                <tr>
+                    <td>Rate</td>
+                    <td class="text-dark font-weight-semibold">@Model.Rate</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+    <div>
+        <a class="btn btn-primary m-r-5" asp-action="Edit" asp-route-id="@Model.ReviewId">Edit</a> |
+        <a class="btn btn-success  m-r-5" asp-action="Index">Back to List</a>
+    </div>
+</div>
+
+

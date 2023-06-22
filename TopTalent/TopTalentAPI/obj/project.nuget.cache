@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4vgslSgvvWObTJ1Of1a4r4fwetgkRLVJcFW8TrTIgL48Ql9EpmIhM7zbsAC7FifzgWMbqAmwvlQye2a8mW5Paw==",
+  "dgSpecHash": "k0R8cgDm3M+MOXut6zFfa4sG2PCTurGOGzQZNz5LP4jH5fh/JjGcM2WkjPNZ9+90TpnI8cogPngzPGApkG4uIQ==",
   "success": true,
-  "projectFilePath": "D:\\top-talent-api\\TopTalent\\TopTalentAPI\\TopTalentAPI.csproj",
+  "projectFilePath": "D:\\top-talent-api\\top-talent2\\TopTalent\\TopTalentAPI\\TopTalentAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bitano\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Bitano\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.17\\microsoft.aspnetcore.authentication.jwtbearer.5.0.17.nupkg.sha512",

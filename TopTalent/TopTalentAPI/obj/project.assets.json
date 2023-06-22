@@ -8289,11 +8289,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\top-talent-api\\TopTalent\\TopTalentAPI\\TopTalentAPI.csproj",
+      "projectUniqueName": "D:\\top-talent-api\\top-talent2\\TopTalent\\TopTalentAPI\\TopTalentAPI.csproj",
       "projectName": "TopTalentAPI",
-      "projectPath": "D:\\top-talent-api\\TopTalent\\TopTalentAPI\\TopTalentAPI.csproj",
+      "projectPath": "D:\\top-talent-api\\top-talent2\\TopTalent\\TopTalentAPI\\TopTalentAPI.csproj",
       "packagesPath": "C:\\Users\\Bitano\\.nuget\\packages\\",
-      "outputPath": "D:\\top-talent-api\\TopTalent\\TopTalentAPI\\obj\\",
+      "outputPath": "D:\\top-talent-api\\top-talent2\\TopTalent\\TopTalentAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Bitano\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8310,8 +8310,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\top-talent-api\\TopTalent\\Repository\\Repository.csproj": {
-              "projectPath": "D:\\top-talent-api\\TopTalent\\Repository\\Repository.csproj"
+            "D:\\top-talent-api\\top-talent2\\TopTalent\\Repository\\Repository.csproj": {
+              "projectPath": "D:\\top-talent-api\\top-talent2\\TopTalent\\Repository\\Repository.csproj"
             }
           }
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\top-talent-api\\TopTalent\\BussinessObject\\BussinessObject.csproj": {}
+    "D:\\top-talent-api\\top-talent2\\TopTalent\\BussinessObject\\BussinessObject.csproj": {}
   },
   "projects": {
-    "D:\\top-talent-api\\TopTalent\\BussinessObject\\BussinessObject.csproj": {
+    "D:\\top-talent-api\\top-talent2\\TopTalent\\BussinessObject\\BussinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\top-talent-api\\TopTalent\\BussinessObject\\BussinessObject.csproj",
+        "projectUniqueName": "D:\\top-talent-api\\top-talent2\\TopTalent\\BussinessObject\\BussinessObject.csproj",
         "projectName": "BussinessObject",
-        "projectPath": "D:\\top-talent-api\\TopTalent\\BussinessObject\\BussinessObject.csproj",
+        "projectPath": "D:\\top-talent-api\\top-talent2\\TopTalent\\BussinessObject\\BussinessObject.csproj",
         "packagesPath": "C:\\Users\\Bitano\\.nuget\\packages\\",
-        "outputPath": "D:\\top-talent-api\\TopTalent\\BussinessObject\\obj\\",
+        "outputPath": "D:\\top-talent-api\\top-talent2\\TopTalent\\BussinessObject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bitano\\AppData\\Roaming\\NuGet\\NuGet.Config",
