@@ -468,3 +468,6 @@ D:\top-talent-api\top-talent2\TopTalent\TopTalentWebClient1\obj\Debug\net5.0\Raz
 D:\top-talent-api\top-talent2\TopTalent\TopTalentWebClient1\obj\Debug\net5.0\Razor\Areas\Admin\Views\AdminBookings\Index.cshtml.g.cs
 D:\top-talent-api\top-talent2\TopTalent\TopTalentWebClient1\obj\Debug\net5.0\Razor\Views\Shared\_FooterPartialView.cshtml.g.cs
 D:\top-talent-api\top-talent2\TopTalent\TopTalentWebClient1\obj\Debug\net5.0\Razor\Views\Shared\_HeaderPartialView.cshtml.g.cs
+D:\top-talent-api\top-talent2\TopTalent\TopTalentWebClient1\obj\Debug\net5.0\Razor\Views\Talent\Index.cshtml.g.cs
+D:\top-talent-api\top-talent2\TopTalent\TopTalentWebClient1\obj\Debug\net5.0\Razor\Views\Talent\Details.cshtml.g.cs
+D:\top-talent-api\top-talent2\TopTalent\TopTalentWebClient1\obj\Debug\net5.0\Razor\Views\Contact\Index.cshtml.g.cs
