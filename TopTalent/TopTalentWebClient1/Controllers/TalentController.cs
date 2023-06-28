@@ -35,7 +35,7 @@ namespace TopTalentWebClient1.Controllers
          
            
         }
-        [Route("/{JobTitle}", Name ="ListTalent")]
+/*        [Route("/{JobTitle}", Name ="ListTalent")]
         public IActionResult List(string JobTitle,int page=1)
         {
             try
@@ -55,7 +55,7 @@ namespace TopTalentWebClient1.Controllers
                 return RedirectToAction("Index", "Home");
             }
            
-        }
+        }*/
         [Route("/{fullname}--{id}.html", Name ="TalentDetails")]
         public IActionResult Details(int id)
         {

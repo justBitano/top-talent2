@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<main class="main-content">
+
+    <div class="breadcrumb-area breadcrumb-height" data-bg-image="assets/images/breadcrumb/bg/bg-img.jpg">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-item">
+                        <h2 class="breadcrumb-heading">TOP TALENT</h2>
+                        <ul>
+                            <li>
+                                <a asp-controller="Home" asp-action="Index">Home <i class="pe-7s-angle-right"></i></a>
+                            </li>
+                            <li>SIGN UP</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="login-register-area section-space-y-axis-100" style="margin-left:600px">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="login-form">
+                        <h4 class="login-title" style="text-align:center">CHOOSE TO REGISTER</h4>
+                        <div class="row">
+                            <label style="text-align:center">Become a KOL/Talent</label>
+                            <a class="btn btn-xl-size lg-size btn-secondary btn-primary-hover rounded-0" asp-controller="Accounts" asp-action="RegisterTalent">Become Talent</a>
+                            <p> <br /></p>
+                            <label style="text-align:center">Booking a KOL </label>
+                            <a class="btn btn-xl-size lg-size btn-secondary btn-primary-hover rounded-0" asp-controller="Accounts" asp-action="Register">Become User</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>

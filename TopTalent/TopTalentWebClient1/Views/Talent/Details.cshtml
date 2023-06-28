@@ -3,6 +3,9 @@
     ViewData["Title"] = Model.JobTitle;
     Layout = "~/Views/Shared/_Layout.cshtml";
     List<Talent> lsTalent = ViewBag.TalentKhac;
+    var talentParam = Model.TalentId;
+    var talentFullName = Model.FullName;
+    var talentPrice = Model.Price;
 }
 <div class="breadcrumb-area breadcrumb-height" data-bg-image="assets/images/breadcrumb/bg/bg-primary.png">
     <div class="container h-100">
@@ -86,7 +89,9 @@
                                     </div>
                                 </li>
                                 <li class="add-to-cart">
-                                    <a style="color:white; background-color:#FAC8C8; border-color:black" class="btn btn-custom-size lg-size btn-primary btn-secondary-hover rounded-0" href="cart.html">Booking ngay</a>
+                                    <a style="color:white; background-color:black; border-color:black" class="btn btn-custom-size lg-size btn-primary btn-secondary-hover rounded-0"
+                                       asp-controller="Bookings" asp-action="Create" asp-route-id="@talentParam"
+                                       asp-route-fullName="@talentFullName" asp-route-price="@talentPrice">Booking ngay</a>
                                 </li>
                                @* <li class="wishlist-btn-wrap">
                                     <a class="btn rounded-0" href="wishlist.html">

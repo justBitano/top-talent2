@@ -32,10 +32,17 @@ namespace TopTalentWebClient1
             services.AddDbContext<TopTalent2Context>(options => options.UseSqlServer(stringConnectdb));
 
             services.AddSingleton<HtmlEncoder>(HtmlEncoder.Create(allowedRanges: new[] { UnicodeRanges.All }));
+            services.AddSession();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddNotyf(config =>
             {
                 config.DurationInSeconds = 10; config.IsDismissable = true; config.Position = NotyfPosition.BottomRight;
+            });
+            services.AddSession(options =>
+            {
+                options.IdleTimeout= TimeSpan.FromMinutes(20);
+                options.Cookie.HttpOnly= true;
+                options.Cookie.IsEssential= true;
             });
         }
 
@@ -58,6 +65,8 @@ namespace TopTalentWebClient1
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

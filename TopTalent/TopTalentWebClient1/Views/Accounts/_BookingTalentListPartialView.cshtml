@@ -1,0 +1,82 @@
+﻿@model List<Booking>
+
+@if (Model != null && Model.Count() > 0)
+{
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <tbody>
+                <tr>
+                    <th>Booking ID</th>
+                    <th>Created Date</th>
+                    <th>CASH</th>
+                    <th>DESCRIPTION</th>
+                    <th>STATUS</th>
+                    <th>TALENT-NAME</th>
+                    <th>#</th>
+                    <th>#</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><a class="account-order-id" href="javascript:void(0)">#@item.BookingId</a></td>
+                        <td>@item.CreateDate</td>
+                        <td>@item.Cash.ToString("#,##0").000 VND</td>
+                        <td>@item.Description</td>
+                        <td>
+                            @if (@item.Status == 0 || @item.Status == null)
+                            {
+                                <p style="color:red">Pending</p>
+                            }
+                            else if (@item.Status == 1)
+                            {
+                                <p style="color:blue">Talent Approved</p>
+                            }
+                            else if (@item.Status == 2)
+                            {
+                                <p style="color:green">User Payment</p>
+                            }
+                            else if (@item.Status == 3)
+                            {
+                                            <p style="color:#DAA520">Proccessing </p>
+                            }
+                            else if (@item.Status == 4)
+                            {
+                                 <p style="color:#0000CD">Success Payment</p>
+                            }
+                            else if (@item.Status == 5)
+                            {
+                                <p style="color:pink">Finish</p>
+                            }
+                            else if (@item.Status == 6)
+                            {
+                                <p style="color:reds">Reject Booking</p>
+                            }
+                        </td>
+                        <td>@item.User.FullName</td>
+                        <td>
+                            @if (@item.Status == 0)
+                            {
+                               <a asp-controller="BookingTalents" asp-action="Approved" 
+                               asp-route-bookingId="@item.BookingId" asp-route-userId="@item.UserId"
+                               asp-route-talentId="@item.TalentId">Approved</a>
+                            }
+                        </td>
+                        <td>
+                              @if (@item.Status == 0)
+                            {
+                                   <a asp-controller="BookingTalents" asp-action="Reject" 
+                               asp-route-bookingId="@item.BookingId" asp-route-userId="@item.UserId"
+                               asp-route-talentId="@item.TalentId">Reject</a>
+                            }
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <p>Chưa có Bookings</p>
+}

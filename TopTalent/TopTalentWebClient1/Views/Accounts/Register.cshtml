@@ -1,0 +1,82 @@
+﻿@model TopTalentWebClient1.ModelView.AccountViewModel
+
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<main class="main-content">
+    <div class="breadcrumb-area breadcrumb-height" data-bg-image="assets/images/breadcrumb/bg/bg-img.jpg">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-item">
+                        <h2 class="breadcrumb-heading">TOP TALENT</h2>
+                        <ul>
+                            <li>
+                                <a asp-controller="Home" asp-action="Index">Home <i class="pe-7s-angle-right"></i></a>
+                            </li>
+                            <li>Register For User</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="login-register-area section-space-y-axis-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 pt-10 pt-lg-0" style="margin-left:300px">
+                    <form asp-action="Register">
+                        <div class="login-form">
+                            <h4 class="login-title">REGISTER</h4>
+                            <div class="row">
+                                <div class="col-md-6 col-12">
+                                    <label asp-for="FullName" class="control-label"></label>
+                                    <input asp-for="FullName" class="form-control" placeholder="Full Name" />
+                                    <span asp-validation-for="FullName" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-12">
+                                    <label asp-for="Username" class="control-label"></label>
+                                    <input asp-for="Username" class="form-control" placeholder="User Name" />
+                                    <span asp-validation-for="Username" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Password" class="control-label"></label>
+                                    <input type="password" asp-for="Password" class="form-control" placeholder="Password" />
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="ConfirmPassword" class="control-label"></label>
+                                    <input type="password" asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password" />
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Phone" class="control-label"></label>
+                                    <input type="tel" asp-for="Phone" class="form-control" placeholder="Phone Number" />
+                                    <span asp-validation-for="Phone" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Description" class="control-label"></label>
+                                    <input type="tel" asp-for="Description" class="form-control" placeholder="Description" />
+                                    <span asp-validation-for="Description" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Image" class="control-label"></label>
+                                    <input type="tel" asp-for="Image" class="form-control" placeholder="Image" />
+                                    <span asp-validation-for="Image" class="text-danger"></span>
+                                </div>
+
+
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-custom-size lg-size btn-secondary btn-primary-hover rounded-0">Register</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

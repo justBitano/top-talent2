@@ -1,4 +1,10 @@
-﻿<header class="main-header_area position-relative">
+﻿@using Microsoft.AspNetCore.Http;
+@{
+    var talentId = Context.Session.GetInt32("TalentId");
+    var userId = Context.Session.GetInt32("UserId");
+}
+
+<header class="main-header_area position-relative">
     @*  <div class="header-top border-bottom d-none d-md-block">
     <div class="container">
     <div class="row align-items-center">
@@ -60,9 +66,19 @@
                                         <i class="pe-7s-users"></i>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingButton">
-                                        <li><a class="dropdown-item" href="my-account.html">Account</a></li>
-                                        <li><a class="dropdown-item" asp-controller="Login" asp-action="Index">Sign In</a></li>
-                                        <li><a class="dropdown-item" asp-controller="Option" asp-action="Index">Register</a></li>
+                                        @if (!talentId.HasValue && !userId.HasValue)
+                                        {
+                                            <li><a class="dropdown-item" asp-controller="Accounts" asp-action="Login">Sign In</a></li>
+                                            <li><a class="dropdown-item" asp-controller="Accounts" asp-action="Options">Register</a></li>
+                                        }
+                                        @if (talentId.HasValue || userId.HasValue)
+                                        {
+                                            <li><a class="dropdown-item" asp-action="Dashboard" asp-controller="Accounts">Account</a></li>
+                                            <li><a class="dropdown-item" asp-action="Logout" asp-controller="Accounts">Logout</a></li>
+
+                                        }
+
+
                                     </ul>
                                 </li>
                                 <li class="d-none d-md-block">
@@ -97,21 +113,21 @@
                                 <ul>
                                     <li class="drop-holder">
                                         <a asp-controller="Home" asp-action="Index">
-                                           Home
+                                            Home
                                         </a>
                                     </li>
                                     <li class="megamenu-holder">
-                                        <a href="listTalent.html"> List KOL </a>
-                                            
-                                      
+                                        <a href="/listTalent.html"> List KOL </a>
+
+
                                     </li>
                                     <li class="megamenu-holder">
-                                      @*   <a asp-controller="Blog" asp-action="Index">Blog</a>*@
-                                      <a href="blog.html">Blog</a>
+                                        @*   <a asp-controller="Blog" asp-action="Index">Blog</a>*@
+                                        <a href="/blog.html">Blog</a>
                                     </li>
                                     <li>
-                                       @* <a asp-controller="Contact" asp-action="Index">Contact</a>*@
-                                       <a href="contact.html">Contact</a>
+                                        @* <a asp-controller="Contact" asp-action="Index">Contact</a>*@
+                                        <a href="/contact.html">Contact</a>
                                     </li>
                                 </ul>
                             </nav>
