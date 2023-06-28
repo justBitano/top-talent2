@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using TopTalentWebClient1.Models;
 using TopTalentWebClient1.ModelView;
 
@@ -25,7 +26,12 @@ namespace TopTalentWebClient1.Controllers
         {
             return View();
         }
-
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
         public IActionResult Login(LoginViewModel model)
         {
             var user = _context.Users.SingleOrDefault(x => x.Username == model.Username && x.Password == model.Password);
@@ -51,7 +57,7 @@ namespace TopTalentWebClient1.Controllers
             }
             if (user == null && talent == null) _notifyService.Error("UserName hoặc Password không chính xác");
 
-            return View();
+            return View(model);
         }
 
         [HttpGet]
@@ -143,7 +149,7 @@ namespace TopTalentWebClient1.Controllers
                         .Include(u => u.User)
                         .AsNoTracking()
                         .Where(x => x.UserId == khachhang.UserId)
-                        .OrderByDescending(x => x.CreateDate).ToList();
+                        .OrderByDescending(x => x.Status).ToList();
                     ViewBag.listBooking = listBooking;
                     return View(khachhang);
                 }
@@ -158,7 +164,7 @@ namespace TopTalentWebClient1.Controllers
                         .Include(y => y.Talent)
                         .AsNoTracking()
                         .Where(x => x.TalentId == talent.TalentId)
-                        .OrderByDescending(x => x.CreateDate).ToList();
+                        .OrderByDescending(x => x.Status).ToList();
                     ViewBag.listBookingTalent = listBookingTalent;
                     return View(talent);
                 }
@@ -171,6 +177,7 @@ namespace TopTalentWebClient1.Controllers
         {
             HttpContext.Session.Remove("UserId");
             HttpContext.Session.Remove("TalentId");
+            _notifyService.Success("Logout Success");
             return RedirectToAction("Index", "Home");
         }
         public IActionResult Options()
@@ -271,5 +278,64 @@ namespace TopTalentWebClient1.Controllers
             _notifyService.Success("Thay đổi mật khẩu không thành công");
             return RedirectToAction("Dashboard", "Accounts");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> EditUserVM(int? id)
+        {
+            var taikhoanID = HttpContext.Session.GetInt32("UserId");
+            id = taikhoanID;
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var user = await _context.Users.FindAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return View(user);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditUserVM(int id, [Bind("UserId,Username,Password,FullName,Phone,Description,Image,Status")] User user)
+        {
+            var taikhoanID = HttpContext.Session.GetInt32("UserId");
+            id = (int)taikhoanID;
+            if (id != user.UserId)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(user);
+                    await _context.SaveChangesAsync();
+                    _notifyService.Success("Cập nhập thành công");
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!UserExists(user.UserId))
+                    {
+                        _notifyService.Success("Có lỗi xãy ra");
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(user);
+        }
+
+        private bool UserExists(int id)
+        {
+            return _context.Users.Any(e => e.UserId == id);
+        }
     }
+  
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -13,10 +14,11 @@ namespace TopTalentWebClient1.Controllers
     public class BookingsController : Controller
     {
         private readonly TopTalent2Context _context;
-
-        public BookingsController(TopTalent2Context context)
+        public INotyfService _notifyService { get; }
+        public BookingsController(TopTalent2Context context, INotyfService notyfService)
         {
-            _context = context;
+            _context = context; 
+            _notifyService = notyfService;
         }
 
         // GET: Bookings
@@ -77,6 +79,7 @@ namespace TopTalentWebClient1.Controllers
                 booking.Status = 0;
                 _context.Add(booking);
                 await _context.SaveChangesAsync();
+                _notifyService.Success("Create Booking Success");
                 return RedirectToAction("Dashboard", "Accounts");
             }
             var talent = _context.Talents.SingleOrDefault(x => x.TalentId.Equals(id));
@@ -201,6 +204,7 @@ namespace TopTalentWebClient1.Controllers
                 booking.Status = 3;
                 _context.Update(booking);
                 await _context.SaveChangesAsync();
+                _notifyService.Success("Bạn vui lòng chờ check thanh toán nhé.");
                 return RedirectToAction("Dashboard", "Accounts");
             }
             return View(booking);

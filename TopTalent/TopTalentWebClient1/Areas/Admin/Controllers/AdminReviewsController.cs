@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,10 +14,11 @@ namespace TopTalentWebClient1.Areas.Admin.Controllers
     public class AdminReviewsController : Controller
     {
         private readonly TopTalent2Context _context;
-
-        public AdminReviewsController(TopTalent2Context context)
+        public INotyfService _notifyService { get; }
+        public AdminReviewsController(TopTalent2Context context, INotyfService notyf)
         {
             _context = context;
+            _notifyService = notyf;
         }
 
         // GET: Admin/AdminReviews
@@ -64,6 +66,7 @@ namespace TopTalentWebClient1.Areas.Admin.Controllers
             {
                 _context.Add(review);
                 await _context.SaveChangesAsync();
+                _notifyService.Success("Create Success");
                 return RedirectToAction(nameof(Index));
             }
             ViewData["BookingId"] = new SelectList(_context.Bookings, "BookingId", "BookingId", review.BookingId);
@@ -105,11 +108,13 @@ namespace TopTalentWebClient1.Areas.Admin.Controllers
                 {
                     _context.Update(review);
                     await _context.SaveChangesAsync();
+                    _notifyService.Success("Edit Success");
                 }
                 catch (DbUpdateConcurrencyException)
                 {
                     if (!ReviewExists(review.ReviewId))
                     {
+                        _notifyService.Error("Edit Fail");
                         return NotFound();
                     }
                     else
@@ -150,6 +155,7 @@ namespace TopTalentWebClient1.Areas.Admin.Controllers
             var review = await _context.Reviews.FindAsync(id);
             _context.Reviews.Remove(review);
             await _context.SaveChangesAsync();
+            _notifyService.Success("Delete Success");
             return RedirectToAction(nameof(Index));
         }
 

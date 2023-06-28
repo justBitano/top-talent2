@@ -51,25 +51,25 @@
                             {
                                 <p style="color:reds">Reject Booking</p>
                             }
-                                </td>
-                                <td>@item.Talent.FullName</td>
-                                <td>
+                            </td>
+                           <td>@item.Talent.FullName</td>
+                            <td>
                             @if (@item.Status == 1)
                             {
-                               <a asp-controller="Bookings" asp-action="DirectPayment" 
+                               <a   asp-controller="Bookings" asp-action="DirectPayment" 
                                asp-route-bookingId="@item.BookingId" asp-route-userId="@item.UserId" asp-route-talentId="@item.TalentId"
                                asp-route-talentName="@item.Talent.FullName" asp-route-talentPrice="@item.Talent.Price"
-                               >Payment</a>
+                               >
+                                    <button type="submit" class="btn btn-custom-size lg-size btn-secondary btn-primary-hover rounded-0">
+                                    Payment</button>
+                                 </a>
                             }
 
-                                </td>
+                            </td>
 
                             </tr>
                 }
-
-
-
-                    }
+                   
                 </tbody>
             </table>
         </div>

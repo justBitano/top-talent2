@@ -41,7 +41,7 @@
                             }
                             else if (@item.Status == 4)
                             {
-                                 <p style="color:#0000CD">Success Payment</p>
+                                 <p style="color:#0000CD"> User Success Payment</p>
                             }
                             else if (@item.Status == 5)
                             {
@@ -56,17 +56,37 @@
                         <td>
                             @if (@item.Status == 0)
                             {
-                               <a asp-controller="BookingTalents" asp-action="Approved" 
+                            <a  asp-controller="BookingTalents" asp-action="Approved" 
                                asp-route-bookingId="@item.BookingId" asp-route-userId="@item.UserId"
-                               asp-route-talentId="@item.TalentId">Approved</a>
+                               asp-route-talentId="@item.TalentId">
+                            <button type="submit" style="background-color:blue" class="btn btn-custom-size lg-size btn-secondary btn-primary-hover rounded-0">Approved</button>
+                                </a>
+                            } else if (item.Status == 4)
+                            {
+                            <a  asp-controller="BookingTalents" asp-action="ReceivedMoney" 
+                               asp-route-bookingId="@item.BookingId" asp-route-userId="@item.UserId"
+                               asp-route-talentId="@item.TalentId">
+                                    <button type="submit" style="background-color:blue" class="btn btn-custom-size lg-size btn-secondary btn-primary-hover rounded-0">Received Money</button>
+                            </a>
                             }
                         </td>
                         <td>
                               @if (@item.Status == 0)
                             {
-                                   <a asp-controller="BookingTalents" asp-action="Reject" 
+                             <a asp-controller="BookingTalents" asp-action="NotYet" 
                                asp-route-bookingId="@item.BookingId" asp-route-userId="@item.UserId"
-                               asp-route-talentId="@item.TalentId">Reject</a>
+                               asp-route-talentId="@item.TalentId">
+                            <button style="background-color:red" type="submit" class="btn btn-custom-size lg-size btn-secondary btn-primary-hover rounded-0">Reject</button>
+                                </a>
+
+                            }
+                            else if(@item.Status == 4)
+                            {
+                                <a asp-controller="BookingTalents" asp-action="Approved"
+                                asp-route-bookingId="@item.BookingId" asp-route-userId="@item.UserId"
+                                asp-route-talentId="@item.TalentId">
+                                    <button type="submit" style="background-color:red" class="btn btn-custom-size lg-size btn-secondary btn-primary-hover rounded-0">Not Yet</button>
+                                </a>
                             }
                         </td>
 

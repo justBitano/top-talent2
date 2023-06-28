@@ -1,101 +1,49 @@
-﻿@using Microsoft.AspNetCore.Http;
+﻿@model TopTalentWebClient1.ModelView.UserVM
 @{
-
-    TopTalentWebClient1.ModelView.UserVM userVM = new TopTalentWebClient1.ModelView.UserVM();
-    TopTalentWebClient1.ModelView.TalentVM talentVM = new TopTalentWebClient1.ModelView.TalentVM();
-
-    var talentId = Context.Session.GetInt32("TalentId");
-    var userId = Context.Session.GetInt32("UserId");
-}
-@if (userId.HasValue)
-{
-        <div class="row">
-            <div class="col-md-4">
-                <form asp-controller="Accounts" asp-action="Edit">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input type="hidden" value="@userVM.UserId" />
-                    <div class="form-group">
-                        <label class="control-label">Username</label>
-                        <input value="@userVM.Username" class="form-control" />
+    var txt_username = @Model.Username;
+    var txt_fullname = Model.FullName;
+    }
+    <div class="myaccount-details">
+<form asp-controller="Accounts" asp-action="EditUserVM" method="post" class="myaccount-form">
+    <div class="myaccount-form-inner">
+     <input type="hidden" asp-for="UserId" />
+     <div class="single-input single-input-half">
+                @txt_fullname
+                    <label asp-for="Username" class="control-label"></label>
+                    <input asp-for="Username" class="form-control"/>
+                    <span asp-validation-for="Username" class="text-danger"></span>
                     </div>
-                    <div class="form-group">
-                        <label  class="control-label">FullName</label>
-                        <input value="@userVM.FullName" class="form-control" />
+     <div class="single-input single-input-half">
+                    <label asp-for="FullName" class="control-label"></label>
+                    <input asp-for="FullName" class="form-control" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
                     </div>
-                    <div class="form-group">
-                        <label  class="control-label">Phone</label>
-                        <input value="@userVM.Phone" class="form-control" />
+     <div class="single-input-half">
+                    <label asp-for="Phone" class="control-label"></label>
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
                     </div>
-                    <div class="form-group">
-                        <label  class="control-label">Description</label>
-                        <input value="@userVM.Description" class="form-control" />
+     <div class="single-input">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
                     </div>
-                    <div class="form-group">
-                        <label class="control-label">Image</label>
-                        <input value="@userVM.Image" class="form-control" />
+     <div class="single-input">
+                    <label asp-for="Image" class="control-label"></label>
+                    <input asp-for="Image" class="form-control" />
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>                   
+     <div class="single-input">
+                    <label asp-for="Status" class="control-label"></label>
+                    <input asp-for="Status" class="form-control" />
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+                      <div class="single-input">
+                        <button style="background-color:black;  color:white" class="btn btn-custom-size lg-size btn-secondary btn-primary-hover rounded-0" type="submit">Save Changes
+                        </button>
                     </div>
-                    <div class="form-group">
-                        <input style="color:white; background-color:black; border-color:black" type="submit" value="Save" class="btn btn-primary" />
-                    </div>
-                </form>
-            </div>
-        </div>
-}
-@*@if(talentId.HasValue)
-{
-    <div class="card-body">
-        <h1>Information</h1>
-        <h4 class="card-title">@Model.FullName</h4>
-        <div class="table-responsive">
-            <table class="product-info-table m-t-20">
-                <tbody>
-                    <tr>
-                        <td>ID</td>
-                        <td class="text-dark font-weight-semibold">@Model.TalentId</td>
-                    </tr>
-                    <tr>
-                        <td>Image</td>
-                        <td class="text-dark font-weight-semibold"><img style="width:400px; height:400px" src="~/img-talent/@Model.Image" /></td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td class="text-dark font-weight-semibold">@Model.Username</td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td class="text-dark font-weight-semibold">@Model.Password</td>
-                    </tr>
-                    <tr>
-                        <td>Phone</td>
-                        <td class="text-dark font-weight-semibold">@Model.Phone</td>
-                    </tr>
-                    <tr>
-                        <td>Address</td>
-                        <td class="text-dark font-weight-semibold">@Model.Address</td>
-                    </tr>
-                    <tr>
-                        <td>Job Title</td>
-                        <td class="text-dark font-weight-semibold">@Model.JobTitle</td>
-                    </tr>
-                    <tr>
-                        <td>Price</td>
-                        <td class="text-dark font-weight-semibold">@Model.Price</td>
-                    </tr>
-
-                    <tr>
-                        <td>Description</td>
-                        <td class="text-dark font-weight-semibold">@Model.Description</td>
-                    </tr>
-                    <tr>
-                        <td>Status</td>
-                        <td class="text-dark font-weight-semibold">@Model.Status</td>
-                    </tr>
-
-
-                </tbody>
-            </table>
-
-        </div>
-
     </div>
-}*@
+            </form>
+</div>
+
+

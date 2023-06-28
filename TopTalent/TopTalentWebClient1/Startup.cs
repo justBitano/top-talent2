@@ -14,6 +14,7 @@ using System.Text.Unicode;
 using System.Threading.Tasks;
 using TopTalentWebClient1.Models;
 
+
 namespace TopTalentWebClient1
 {
     public class Startup
@@ -38,12 +39,14 @@ namespace TopTalentWebClient1
             {
                 config.DurationInSeconds = 10; config.IsDismissable = true; config.Position = NotyfPosition.BottomRight;
             });
+          
             services.AddSession(options =>
             {
                 options.IdleTimeout= TimeSpan.FromMinutes(20);
                 options.Cookie.HttpOnly= true;
                 options.Cookie.IsEssential= true;
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

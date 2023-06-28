@@ -488,3 +488,8 @@ D:\top-talent-api\top-talent2\TopTalent\TopTalentWebClient1\obj\Debug\net5.0\Top
 D:\top-talent-api\top-talent2\TopTalent\TopTalentWebClient1\obj\Debug\net5.0\ref\TopTalentWebClient1.dll
 D:\top-talent-api\top-talent2\TopTalent\TopTalentWebClient1\obj\Debug\net5.0\Razor\Views\Accounts\_BookingTalentListPartialView.cshtml.g.cs
 D:\top-talent-api\top-talent2\TopTalent\TopTalentWebClient1\obj\Debug\net5.0\Razor\Views\Bookings\DirectPayment.cshtml.g.cs
+D:\top-talent-api\top-talent2\TopTalent\TopTalentWebClient1\bin\Debug\net5.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+D:\top-talent-api\top-talent2\TopTalent\TopTalentWebClient1\bin\Debug\net5.0\Pipelines.Sockets.Unofficial.dll
+D:\top-talent-api\top-talent2\TopTalent\TopTalentWebClient1\bin\Debug\net5.0\StackExchange.Redis.dll
+D:\top-talent-api\top-talent2\TopTalent\TopTalentWebClient1\bin\Debug\net5.0\System.Diagnostics.PerformanceCounter.dll
+D:\top-talent-api\top-talent2\TopTalent\TopTalentWebClient1\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll

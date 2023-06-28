@@ -5,7 +5,7 @@ namespace TopTalentWebClient1.ModelView
     public class LoginViewModel
     {
         [MaxLength(100)]
-        [Required(ErrorMessage = "Vui lòng nhập Username")]
+        [Required(ErrorMessage = "Vui lòng nhập username")]
         [Display(Name = "Username")]
         public string Username { get; set; }
 
