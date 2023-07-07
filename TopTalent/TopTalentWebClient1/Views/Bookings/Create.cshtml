@@ -2,14 +2,14 @@
 @model TopTalentWebClient1.Models.Booking
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "CreateBooking";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var talentIdSession = Context.Session.GetInt32("TalentId");
     var userIdSession = Context.Session.GetInt32("UserId");
 }
 
 <main class="main-content">
-    <div class="breadcrumb-area breadcrumb-height" data-bg-image="assets/images/breadcrumb/bg/bg-primary.png">
+   @* <div class="breadcrumb-area breadcrumb-height" data-bg-image="assets/images/breadcrumb/bg/bg-primary.png">
         <div class="container h-100">
         <div class="row h-100">
             <div class="col-lg-12">
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-</div>
+</div>*@
 
 <div class="checkout-area section-space-y-axis-100">
     <div class="container">
