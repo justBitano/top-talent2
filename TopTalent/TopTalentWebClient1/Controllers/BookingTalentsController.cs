@@ -1,5 +1,4 @@
 ﻿using AspNetCoreHero.ToastNotification.Abstractions;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,15 +24,15 @@ namespace TopTalentWebClient1.Controllers
         public async Task<IActionResult> Approved(int bookingId, int userId, int talentId)
         {
             var booking = _context.Bookings.SingleOrDefault(x => x.BookingId.Equals(bookingId) && x.UserId.Equals(userId)
-            && x.TalentId.Equals(talentId) );
+            && x.TalentId.Equals(talentId));
 
             if (booking != null)
             {
                 booking.Status = 1;
-                 _context.Update(booking);
+                _context.Update(booking);
                 await _context.SaveChangesAsync();
                 _notifyService.Success("Approved Success");
-                return RedirectToAction("Dashboard" , "Accounts");
+                return RedirectToAction("Dashboard", "Accounts");
             }
             return View(booking);
         }

@@ -1,4 +1,5 @@
-﻿@using Microsoft.AspNetCore.Http;
+﻿
+@using Microsoft.AspNetCore.Http;
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
@@ -40,24 +41,37 @@
                 <div class="tab-content myaccount-tab-content" id="account-page-tab-content">
                     <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel" aria-labelledby="account-dashboard-tab">
                         <div class="myaccount-dashboard">
-                                Hello <b>@Model.FullName</b>
-                                @await Html.PartialAsync("_AccountsInformation",userVM)
+                            Hello <b>@Model.FullName</b>
+                            @*@await Html.PartialAsync("_AccountsInformation",userVM)*@
+                            @if (userId != null)
+                            {
+                                @await Html.PartialAsync("_ShowInformation.cshtml")
+                                ;
+                            }
+                            @if (talentId != null)
+                            {
+                                @await Html.PartialAsync("_ShowTalentInformation.cshtml")
+                                ;
+                            }
                         </div>
                     </div>
                     <div class="tab-pane fade" id="account-orders" role="tabpanel" aria-labelledby="account-orders-tab">
                         <div class="myaccount-orders">
                             <h4 class="small-title">Booking of @Model.FullName</h4>
-                            @if(userId != null){
+                            @if (userId != null)
+                            {
                                 @await Html.PartialAsync("_BookingListPartialView.cshtml",bookings)
-                            }else if(talentId != null){
+                            }
+                            else if (talentId != null)
+                            {
                                 @await Html.PartialAsync("_BookingTalentListPartialView.cshtml",bookingstalent)
                             }
-                           
+
                         </div>
                     </div>
                     <div class="tab-pane fade" id="account-details" role="tabpanel" aria-labelledby="account-details-tab">
-                          <h4 class="small-title">Change Password of @Model.FullName</h4>
-                          @await Html.PartialAsync("_ChangePasswordPartialView", changePassword)
+                        <h4 class="small-title">Change Password of @Model.FullName</h4>
+                        @await Html.PartialAsync("_ChangePasswordPartialView", changePassword)
                     </div>
                 </div>
             </div>

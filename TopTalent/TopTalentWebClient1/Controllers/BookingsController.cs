@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AspNetCoreHero.ToastNotification.Abstractions;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Threading.Tasks;
 using TopTalentWebClient1.Models;
 
 namespace TopTalentWebClient1.Controllers
@@ -17,7 +15,7 @@ namespace TopTalentWebClient1.Controllers
         public INotyfService _notifyService { get; }
         public BookingsController(TopTalent2Context context, INotyfService notyfService)
         {
-            _context = context; 
+            _context = context;
             _notifyService = notyfService;
         }
 
@@ -68,7 +66,7 @@ namespace TopTalentWebClient1.Controllers
         public async Task<IActionResult> Create([Bind("BookingId,CreateDate,Cash,Description,Status,UserId,TalentId")] Booking booking, int id)
         {
             var userId = HttpContext.Session.GetInt32("UserId");
-            if(userId == null)
+            if (userId == null)
             {
                 return RedirectToAction("Login", "Accounts");
             }
@@ -180,7 +178,7 @@ namespace TopTalentWebClient1.Controllers
         }
 
 
-        public async Task<IActionResult> DirectPayment(int bookingId, int userId, int talentId, string talentName , string talentPrice)
+        public async Task<IActionResult> DirectPayment(int bookingId, int userId, int talentId, string talentName, string talentPrice)
         {
             string bookingId1 = Request.Query["bookingId"];
             string userId1 = Request.Query["userId"];

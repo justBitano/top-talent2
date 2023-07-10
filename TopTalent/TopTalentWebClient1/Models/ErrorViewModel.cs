@@ -1,5 +1,3 @@
-using System;
-
 namespace TopTalentWebClient1.Models
 {
     public class ErrorViewModel

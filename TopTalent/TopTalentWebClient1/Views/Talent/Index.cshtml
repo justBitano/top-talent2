@@ -67,50 +67,54 @@
                             {
                                 foreach (var item in Model)
                                 {
-                                    string url = $"/{item.FullName}--{item.TalentId}.html";
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="product-item">
-                                            <div class="product-img img-zoom-effect">
-                                                <a href="@url">
-                                                    <img class="img-full"  style="width:270px; height:270px" src="~/img-talent/@item.Image" alt="Talent Images">
-                                                </a>
-                                                <div class="product-add-action">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="cart.html">
-                                                                <i class="pe-7s-cart"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="compare.html">
-                                                                <i class="pe-7s-shuffle"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="wishlist.html">
-                                                                <i class="pe-7s-like"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                    if(item.Status == 0)
+                                    {
+                                        string url = $"/{item.FullName}--{item.TalentId}.html";
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="product-item">
+                                                <div class="product-img img-zoom-effect">
+                                                    <a href="@url">
+                                                        <img class="img-full" style="width:270px; height:270px" src="~/img-talent/@item.Image" alt="Talent Images">
+                                                    </a>
+                                                    <div class="product-add-action">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="cart.html">
+                                                                    <i class="pe-7s-cart"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="compare.html">
+                                                                    <i class="pe-7s-shuffle"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="wishlist.html">
+                                                                    <i class="pe-7s-like"></i>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="product-content">
-                                                <a class="product-name" href="@url">@item.FullName</a>
-                                                <div class="price-box pb-1">
-                                                    <span class="new-price">@item.Price</span>
-                                                </div>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="pe-7s-star"></i></li>
-                                                        <li><i class="pe-7s-star"></i></li>
-                                                        <li><i class="pe-7s-star"></i></li>
-                                                        <li><i class="pe-7s-star"></i></li>
-                                                        <li><i class="pe-7s-star"></i></li>
-                                                    </ul>
+                                                <div class="product-content">
+                                                    <a class="product-name" href="@url">@item.FullName</a>
+                                                    <div class="price-box pb-1">
+                                                        <span class="new-price">@item.Price</span>
+                                                    </div>
+                                                    <div class="rating-box">
+                                                        <ul>
+                                                            <li><i class="pe-7s-star"></i></li>
+                                                            <li><i class="pe-7s-star"></i></li>
+                                                            <li><i class="pe-7s-star"></i></li>
+                                                            <li><i class="pe-7s-star"></i></li>
+                                                            <li><i class="pe-7s-star"></i></li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    }
+                                  
                                 }
                             }
                             
@@ -122,51 +126,55 @@
                             {
                                 foreach(var item in Model)
                                 {
-                                    string url = $"/{item.FullName}--{item.TalentId}.html";
-                                    <div class="col-12 pt-6">
-                                        <div class="product-item">
-                                            <div class="product-img img-zoom-effect">
-                                                <a href="@url">
-                                                    <img class="img-full" style="width:270px; height:270px" src="~/img-talent/@item.Image" alt="Talent Images">
-                                                </a>
-                                                <div class="product-add-action">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="cart.html">
-                                                                <i class="pe-7s-cart"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="compare.html">
-                                                                <i class="pe-7s-shuffle"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="wishlist.html">
-                                                                <i class="pe-7s-like"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                    if(item.Status == 0)
+                                    {
+                                        string url = $"/{item.FullName}--{item.TalentId}.html";
+                                        <div class="col-12 pt-6">
+                                            <div class="product-item">
+                                                <div class="product-img img-zoom-effect">
+                                                    <a href="@url">
+                                                        <img class="img-full" style="width:270px; height:270px" src="~/img-talent/@item.Image" alt="Talent Images">
+                                                    </a>
+                                                    <div class="product-add-action">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="cart.html">
+                                                                    <i class="pe-7s-cart"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="compare.html">
+                                                                    <i class="pe-7s-shuffle"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="wishlist.html">
+                                                                    <i class="pe-7s-like"></i>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="product-content align-self-center">
-                                                <a class="product-name pb-2" href="@url">@item.FullName</a>
-                                                <div class="price-box pb-1">
-                                                    <span class="new-price">$80.00</span>
+                                                <div class="product-content align-self-center">
+                                                    <a class="product-name pb-2" href="@url">@item.FullName</a>
+                                                    <div class="price-box pb-1">
+                                                        <span class="new-price">$80.00</span>
+                                                    </div>
+                                                    <div class="rating-box pb-2">
+                                                        <ul>
+                                                            <li><i class="pe-7s-star"></i></li>
+                                                            <li><i class="pe-7s-star"></i></li>
+                                                            <li><i class="pe-7s-star"></i></li>
+                                                            <li><i class="pe-7s-star"></i></li>
+                                                            <li><i class="pe-7s-star"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <p class="short-desc mb-0">@item.Description</p>
                                                 </div>
-                                                <div class="rating-box pb-2">
-                                                    <ul>
-                                                        <li><i class="pe-7s-star"></i></li>
-                                                        <li><i class="pe-7s-star"></i></li>
-                                                        <li><i class="pe-7s-star"></i></li>
-                                                        <li><i class="pe-7s-star"></i></li>
-                                                        <li><i class="pe-7s-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                                <p class="short-desc mb-0">@item.Description</p>
                                             </div>
                                         </div>
-                                    </div>
+                                    }
+                                    
                                 }
                             }
                          

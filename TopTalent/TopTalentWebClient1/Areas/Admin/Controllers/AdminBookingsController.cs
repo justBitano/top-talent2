@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AspNetCoreHero.ToastNotification.Abstractions;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Threading.Tasks;
 using TopTalentWebClient1.Models;
 
 namespace TopTalentWebClient1.Areas.Admin.Controllers
@@ -111,7 +109,7 @@ namespace TopTalentWebClient1.Areas.Admin.Controllers
                 try
                 {
                     _context.Update(booking);
-              
+
                     await _context.SaveChangesAsync();
                     _notifyService.Success("Edit Success");
                 }

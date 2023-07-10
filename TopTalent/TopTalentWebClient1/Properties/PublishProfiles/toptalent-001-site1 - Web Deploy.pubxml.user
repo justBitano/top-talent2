@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAV7ElJYbLN0WkscdIrPTeOgAAAAACAAAAAAAQZgAAAAEAACAAAAB/VuYiu5W+FtPZKH3qFM+O34BChfsXeE1Aaqph7kU20wAAAAAOgAAAAAIAACAAAADYmsbrdXTjNDdHCELmCSIqc3btUY0ZH9mnMC/GbhIxfiAAAABlcazq0F/kopMPeCHMqfuoqmdMRhQDT6qpx1ijyVMm/EAAAAD1JDbjKGzJKLP1sgdhV/Jb5B+MCw7qcBp2fIiFhE3gmAacLYEstc+F9hOJSkcqvHQ4L3Bg1ZHGhPXKYoeVMUTh</EncryptedPassword>
+    <History>True|2023-07-10T03:23:23.5294182Z;False|2023-07-10T09:46:12.8631894+07:00;True|2023-07-09T22:50:13.3972598+07:00;True|2023-07-09T22:42:27.5517320+07:00;True|2023-07-09T22:33:42.3349724+07:00;True|2023-07-09T22:27:12.5887733+07:00;True|2023-07-09T22:04:10.6171063+07:00;True|2023-07-09T21:45:06.1033842+07:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=DESKTOP-N2D8IS4\SQLEXPRESS%3bDatabase=TopTalent2%3bIntegrated Security=true%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

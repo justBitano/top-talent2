@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
+﻿using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations;
 
 namespace TopTalentWebClient1.ModelView
 {
@@ -43,5 +43,7 @@ namespace TopTalentWebClient1.ModelView
         public double? Price { get; set; }
         [Display(Name = "Status")]
         public int? Status { get; set; }
+
+        public IFormFile ImageFile { get; set; }
     }
 }

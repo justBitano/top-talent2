@@ -1,8 +1,10 @@
-﻿namespace TopTalentWebClient1.ModelView
+﻿using Microsoft.AspNetCore.Http;
+
+namespace TopTalentWebClient1.ModelView
 {
     public class TalentVM
     {
-       
+
 
 
         public int TalentId { get; set; }
@@ -16,5 +18,6 @@
         public string Image { get; set; }
         public string Description { get; set; }
         public int? Status { get; set; }
+        public IFormFile ImageFile { get; set; }
     }
 }
